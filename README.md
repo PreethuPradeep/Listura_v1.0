@@ -68,28 +68,28 @@ Tasks also connect to: TaskItem ↔ TaskLabel ↔ Label
 
 ##  Folder Structure
 
-Listura_v1.0/
-│
-├── Models/
-│ ├── AppUser.cs
-│ ├── Project.cs
-│ ├── Section.cs
-│ ├── TaskItem.cs
-│ ├── SubTask.cs
-│ ├── Label.cs
-│ ├── TaskLabel.cs
-│ ├── Reminder.cs
-│ └── BaseEntity.cs
-│
-├── Enums/
-│ ├── TaskPriority.cs
-│ ├── TaskStatus.cs
-│ └── TaskRepeat.cs
-│
-├── Data/
-│ └── ListuraDbContext.cs
-│
-└── ...
+  Listura_v1.0/
+  │
+  ├── Models/
+  │ ├── AppUser.cs
+  │ ├── Project.cs
+  │ ├── Section.cs
+  │ ├── TaskItem.cs
+  │ ├── SubTask.cs
+  │ ├── Label.cs
+  │ ├── TaskLabel.cs
+  │ ├── Reminder.cs
+  │ └── BaseEntity.cs
+  │
+  ├── Enums/
+  │ ├── TaskPriority.cs
+  │ ├── TaskStatus.cs
+  │ └── TaskRepeat.cs
+  │
+  ├── Data/
+  │ └── ListuraDbContext.cs
+  │
+  └── ...
 
 
 ---
