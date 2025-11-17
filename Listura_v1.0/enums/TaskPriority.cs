@@ -1,0 +1,10 @@
+﻿namespace Listura_v1._0.enums
+{
+    public enum TaskPriority
+    {
+        low = 1,
+        medium = 2,
+        high = 3,
+        critical = 4
+    }
+}

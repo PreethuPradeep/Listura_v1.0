@@ -4,10 +4,9 @@ namespace Listura_v1._0.Models
 {
     public class Project:BaseEntity
     {
-        //inherited from entity: public string ProjectId { get; set; }
+        //public int ProjectId { get; set; }
         public string ProjectName { get; set; }
         public string? Theme { get; set; }
-        public DateTime? CreatedAt { get; set; } = DateTime.UtcNow;
         public string UserId { get; set; }
         [ForeignKey("UserId")]
         public AppUser AppUser { get; set; }

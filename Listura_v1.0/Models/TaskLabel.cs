@@ -2,11 +2,10 @@
 
 namespace Listura_v1._0.Models
 {
-    public class TaskLabel:BaseEntity
+    public class TaskLabel
     {
-        //public string TaskLabelId { get; set; }
-        public string LabelId { get; set; }
-        public string TaskItemId { get; set; }
+        public int LabelId { get; set; }
+        public int TaskItemId { get; set; }
         [ForeignKey("LabelId")]
         public Label Label { get; set; }
         [ForeignKey("TaskItemId")]

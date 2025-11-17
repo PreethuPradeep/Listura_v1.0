@@ -4,12 +4,13 @@ namespace Listura_v1._0.Models
 {
     public class Label:BaseEntity
     {
-        //public string LabelId { get; set; }
+        //public int LabelId { get; set; }
         public string LabelName { get; set; }
         public string color { get; set; }
         public string UserId { get; set; }
         [ForeignKey("UserId")]
         public AppUser AppUser { get; set; }
+        public TaskLabel TaskLabel { get; set; }
     }
 }
 //belongs to a user

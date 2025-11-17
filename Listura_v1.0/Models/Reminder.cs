@@ -4,9 +4,9 @@ namespace Listura_v1._0.Models
 {
     public class Reminder:BaseEntity
     {
-        //public string ReminderId { get; set; }
+        //public int ReminderId { get; set; }
         public DateTime ReminderTime { get; set; }
-        public string TaskItemId { get; set; }
+        public int TaskItemId { get; set; }
         [ForeignKey("TaskItemId")]
         public TaskItem TaskItem { get; set; }
     }

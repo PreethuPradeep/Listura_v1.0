@@ -5,7 +5,7 @@ namespace Listura_v1._0.Models
     public class Section:BaseEntity
     {
         public string SectionName { get; set; }
-        public string ProjectId { get; set; }
+        public int ProjectId { get; set; }
         [ForeignKey("ProjectId")]
         public Project project { get; set; }
         public ICollection<TaskItem> Tasks { get; set; }
