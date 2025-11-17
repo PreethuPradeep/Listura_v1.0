@@ -67,7 +67,7 @@ Tasks also connect to: TaskItem ↔ TaskLabel ↔ Label
 ---
 
 ##  Folder Structure
-
+```
   Listura_v1.0/
   │
   ├── Models/
@@ -90,7 +90,7 @@ Tasks also connect to: TaskItem ↔ TaskLabel ↔ Label
   │ └── ListuraDbContext.cs
   │
   └── ...
-
+```
 
 ---
 
