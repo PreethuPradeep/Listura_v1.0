@@ -1,10 +1,19 @@
-﻿namespace Listura_v1._0.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Listura_v1._0.Models
 {
-    public class Project: BaseEntity
+    public class Project:BaseEntity
     {
-        public string Name { get; set; }
-        public int SectionId { get; set; }
-        public Section Section { get; set; }
-        public ICollection<Task> Tasks { get; set; }
+        //inherited from entity: public string ProjectId { get; set; }
+        public string ProjectName { get; set; }
+        public string? Theme { get; set; }
+        public DateTime? CreatedAt { get; set; } = DateTime.UtcNow;
+        public string UserId { get; set; }
+        [ForeignKey("UserId")]
+        public AppUser AppUser { get; set; }
+        public ICollection<Section> Sections { get; set; }
     }
 }
+//represents a group of related tasks
+//belongs to one appuser
+//contains many sections

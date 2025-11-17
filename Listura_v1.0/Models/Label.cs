@@ -1,19 +1,18 @@
-﻿namespace Listura_v1._0.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Listura_v1._0.Models
 {
-    public class Label : BaseEntity
+    public class Label:BaseEntity
     {
-        public string Name { get; set; }
-        public int UserId { get; set; }
-        public ICollection<TaskLabel> TaskLabels { get; set; }
+        //public string LabelId { get; set; }
+        public string LabelName { get; set; }
+        public string color { get; set; }
+        public string UserId { get; set; }
+        [ForeignKey("UserId")]
+        public AppUser AppUser { get; set; }
     }
-
-    public class TaskLabel
-    {
-        public int TaskItemId { get; set; }
-        public Task TaskItem { get; set; }
-
-        public int LabelId { get; set; }
-        public Label Label { get; set; }
-    }
-
 }
+//belongs to a user
+//each user have their own personalised label set
+// connects to many task items
+//many to many

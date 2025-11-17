@@ -1,9 +1,9 @@
 ﻿namespace Listura_v1._0.Models
 {
-    public abstract class BaseEntity
+    public class BaseEntity
     {
-        public int Id { get; set; }
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public DateTime? UpdatedAt { get; set; }
+        public string Id { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
     }
 }
