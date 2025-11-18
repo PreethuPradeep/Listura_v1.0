@@ -10,7 +10,7 @@ namespace Listura_v1._0.Models
         public string UserId { get; set; }
         [ForeignKey("UserId")]
         public AppUser AppUser { get; set; }
-        public TaskLabel TaskLabel { get; set; }
+        public ICollection<TaskLabel> TaskLabel { get; set; }
     }
 }
 //belongs to a user

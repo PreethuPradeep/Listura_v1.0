@@ -21,7 +21,7 @@ namespace Listura_v1._0.Models
         public Section Section { get; set; }
         
         public ICollection<SubTask> SubTasks { get; set; }
-        public ICollection<TaskLabel> TaskLabels { get; set; }
+        public ICollection<TaskLabel> TaskLabel { get; set; }
         public ICollection<Reminder> Reminders { get; set; }
         
     }

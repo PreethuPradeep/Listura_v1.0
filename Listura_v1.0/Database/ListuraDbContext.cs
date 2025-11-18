@@ -22,6 +22,16 @@ namespace Listura_v1._0.Database
             base.OnModelCreating(builder);
             builder.Entity<TaskLabel>()
                 .HasKey(t1 => new { t1.TaskItemId, t1.LabelId });
+            builder.Entity<TaskLabel>()
+                .HasOne(t1 => t1.TaskItem)
+                .WithMany(t => t.TaskLabel)
+                .HasForeignKey(t1 => t1.TaskItemId)
+                .OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<TaskLabel>()
+                .HasOne(t1 => t1.Label)
+                .WithMany(t => t.TaskLabel)
+                .HasForeignKey(t1 => t1.LabelId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
