@@ -28,12 +28,12 @@ namespace Listura_v1._0.Controllers
         [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginDto dto)
         {
-            var result = await authService.Login(dto);
+            var token = await authService.Login(dto);
 
-            if (result != "LoggedIn")
+            if (token == null)
                 return Unauthorized("Invalid email or password");
 
-            return Ok("Login successful");
+            return Ok(new { token });
         }
     }
 }
