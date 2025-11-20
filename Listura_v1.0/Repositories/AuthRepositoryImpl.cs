@@ -28,7 +28,8 @@ namespace Listura_v1._0.Repositories
             var user = new AppUser
             {
                 DisplayName = dto.DisplayName,
-                Email = dto.Email
+                Email = dto.Email,
+                UserName = dto.Email
             };
             var result = await userManager.CreateAsync(user, dto.Password);
             if (!result.Succeeded)
