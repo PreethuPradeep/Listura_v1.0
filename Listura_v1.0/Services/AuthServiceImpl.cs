@@ -3,7 +3,6 @@ using Listura_v1._0.Models.DTOs;
 using Listura_v1._0.Repositories.Interfaces;
 using Listura_v1._0.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -22,6 +21,7 @@ namespace Listura_v1._0.Services
         {
             this.authRepository = authRepository;
             this.config = config;
+            this.userManager = userManager;
         }
 
         public async Task<string> Register(RegisterDto dto)
@@ -44,7 +44,7 @@ namespace Listura_v1._0.Services
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Name, user.Email),
-                new Claim(ClaimTypes.Name, user.DisplayName ?? ""),
+                new Claim("displayName", user.DisplayName ?? ""),
             };
             foreach (var role in roles)
             {
