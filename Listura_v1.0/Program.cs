@@ -1,7 +1,9 @@
 
 using Listura_v1._0.Database;
 using Listura_v1._0.Models;
+using Listura_v1._0.Repositories;
 using Listura_v1._0.Repositories.Interfaces;
+using Listura_v1._0.Services;
 using Listura_v1._0.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -18,8 +20,10 @@ namespace Listura_v1._0
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddScoped<IAuthRepository, AuthRepository>();
-            builder.Services.AddScoped<IAuthService, AuthService>();
+            builder.Services.AddScoped<IAuthRepository, AuthRepositoryImpl>();
+            builder.Services.AddScoped<IAuthService, AuthServiceImpl>();
+            builder.Services.AddScoped<IProjectRepository, ProjectRepositoryImpl>();
+            builder.Services.AddScoped<IProjectService, ProjectServiceImpl>();
             builder.Services.AddControllers()
                 .AddJsonOptions(options =>
                 {
